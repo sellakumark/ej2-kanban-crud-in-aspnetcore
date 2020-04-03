@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Kanban CRUD in ASP.NET Core";
+}
+
+<div class="control-section">
+    <ejs-kanban id="Kanban" keyField="Status">
+        <e-data-manager url="/Home/LoadCard" crudUrl="/Home/UpdateCard" adaptor="UrlAdaptor" crossDomain="true"></e-data-manager>
+        <e-kanban-columns>
+            <e-kanban-column headerText="To Do" keyField="Open"></e-kanban-column>
+            <e-kanban-column headerText="In Progress" keyField="InProgress"></e-kanban-column>
+            <e-kanban-column headerText="In Review" keyField="Review"></e-kanban-column>
+            <e-kanban-column headerText="Done" keyField="Close"></e-kanban-column>
+        </e-kanban-columns>
+        <e-kanban-cardsettings headerField="Id" contentField="Summary" priority="RankId"></e-kanban-cardsettings>
+        <e-kanban-swimlanesettings keyField="Assignee"></e-kanban-swimlanesettings>
+    </ejs-kanban>
+</div>
